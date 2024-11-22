@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background-color: darkslateblue;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-links {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.user-links button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: white;
+    border: 1px solid darkslateblue;
+    color: darkslateblue;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.user-links button:hover {
+    background-color: darkslateblue;
+    color: white;
+}
+
+/* 검색창을 아래로 내려서 위치 수정 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: white;
+    border: 1px solid darkslateblue;
+    color: darkslateblue;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* 이걸 뺄까 말까 */
+.search-container button:hover {
+    background-color: darkslateblue;
+    color: white;
+}
+
+.category-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.category-list ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin: 0 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.category-list li:hover {
+    color: darkslateblue;
+}
+
+/* 프로젝트 만들기 버튼 스타일 */
+.create-project-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#create-project-btn {
+    padding: 12px 30px;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+#create-project-btn:hover {
+    background-color: darkslateblue;
+}

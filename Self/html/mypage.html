@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="../css/mypage.css">
+</head>
+<body>
+    <div class="mypage-container">
+        <!-- 개인정보 수정 버튼 -->
+        <button class="edit-profile-btn" id="editsignup-link">개인정보 수정</button>
+        <button id="mainpage-link">메인 페이지</button> <!--디자인 적용해야함-->
+
+
+        <!-- 찜한 프로젝트 목록 -->
+        <section class="project-list favorite-projects">
+            <h2>찜한 프로젝트</h2>
+            <ul id="favorite-projects">
+                <li>프로젝트 A</li>
+                <li>프로젝트 B</li>
+                <li>프로젝트 C</li>
+            </ul>
+        </section>
+
+        <!-- 후원한 프로젝트 목록 -->
+        <section class="project-list sponsored-projects">
+            <h2>후원한 프로젝트</h2>
+            <ul id="sponsored-projects">
+                <li>프로젝트 D</li>
+                <li>프로젝트 E</li>
+                <li>프로젝트 F</li>
+            </ul>
+        </section>
+
+        <!-- 알림 설정 -->
+        <section class="notification-settings">
+            <h2>알림 설정</h2>
+            <form>
+                <div class="notification-item">
+                    <label for="complaints-notification">민원</label>
+                    <input type="radio" name="complaints" value="yes"> 예
+                    <input type="radio" name="complaints" value="no"> 아니오
+                </div>
+
+                <div class="notification-item">
+                    <label for="projects-notification">프로젝트</label>
+                    <input type="radio" name="projects" value="yes"> 예
+                    <input type="radio" name="projects" value="no"> 아니오
+                </div>
+
+                <div class="notification-item">
+                    <label for="comments-notification">댓글</label>
+                    <input type="radio" name="comments" value="yes"> 예
+                    <input type="radio" name="comments" value="no"> 아니오
+                </div>
+
+                <div class="notification-item">
+                    <label for="sponsorships-notification">후원</label>
+                    <input type="radio" name="sponsorships" value="yes"> 예
+                    <input type="radio" name="sponsorships" value="no"> 아니오
+                </div>
+
+                <!-- 알림 설정 적용 버튼 -->
+                <div class="apply-button">
+                    <button type="submit" class="apply-btn">적용</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="../js/mypage.js"></script>
+</body>
+</html>
