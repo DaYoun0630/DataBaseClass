@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.funding.mapper.UserMapper">
+
+    <!-- 사용자 정보 저장 -->
+    <insert id="insertUser" parameterType="com.project.funding.model.User">
+        INSERT INTO users (username, password, email, phone_number, birth_date, address)
+        VALUES (#{username}, #{password}, #{email}, #{phoneNumber}, #{birthDate}, #{address})
+    </insert>
+
+    <!-- ID로 사용자 조회 -->
+    <select id="getUserById" parameterType="long" resultType="com.project.funding.model.User">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+
+    <!-- 모든 사용자 조회 -->
+    <select id="getAllUsers" resultType="com.project.funding.model.User">
+        SELECT * FROM users
+    </select>
+
+    <!-- 사용자 정보 업데이트 -->
+    <update id="updateUser" parameterType="com.project.funding.model.User">
+        UPDATE users
+        SET username = #{username},
+        password = #{password},
+        email = #{email},
+        phone_number = #{phoneNumber},
+        birth_date = #{birthDate},
+        address = #{address}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 사용자 삭제 -->
+    <delete id="deleteUser" parameterType="long">
+        DELETE FROM users WHERE id = #{id}
+    </delete>
+
+</mapper>
