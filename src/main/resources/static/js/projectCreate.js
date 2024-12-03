@@ -1,8 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
+    const API_BASE_URL = "/api/projects";
+
     const targetAmountInput = document.getElementById("project-target-amount");
     const amountInKorean = document.getElementById("amount-in-korean");
+    const userIdInput = document.getElementById("user-id");
 
-    // 입력 처리
+    localStorage.setItem("token", "YOUR_JWT_TOKEN"); // 서버로부터 받은 토큰 설정
+
+    if (!userIdInput) {
+        alert("필수 입력 필드(user-id)가 없습니다. 페이지를 다시 로드해주세요.");
+        console.error("user-id 요소를 찾을 수 없습니다. HTML에 해당 필드가 있는지 확인하세요.");
+        return;
+    }
+
+    // 사용자 ID 동적 로드
+    try {
+        const response = await fetch(`${API_BASE_URL}/current-user`, {
+            method: "GET",
+            headers: {
+                "Authorization": `Bearer ${localStorage.getItem("token")}`, // JWT 토큰
+            },
+        });
+
+        if (!response.ok) {
+            throw new Error("사용자 정보를 가져오는 데 실패했습니다.");
+        }
+
+        const userId = await response.text();
+        userIdInput.value = userId; // 사용자 ID 설정
+    } catch (error) {
+        console.error("사용자 ID 로드 오류:", error);
+        alert("로그인 정보를 확인할 수 없습니다. 다시 로그인해주세요.");
+    }
+
+    // 목표 금액 입력 처리
     targetAmountInput.addEventListener("input", function () {
         const rawValue = targetAmountInput.value.replace(/[^0-9]/g, ""); // 숫자만 허용
         const numericValue = parseInt(rawValue, 10);
@@ -48,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
         return result || "영";
     }
 
+    // 폼 제출 처리
     const form = document.getElementById("project-create-form");
     form.addEventListener("submit", async function (event) {
         event.preventDefault();
-
 
         const formData = {
             projectName: document.getElementById("project-name").value,
@@ -60,12 +91,11 @@ document.addEventListener("DOMContentLoaded", function () {
             projectStartDate: document.getElementById("project-start-date").value,
             projectEndDate: document.getElementById("project-end-date").value,
             projectTargetAmount: document.getElementById("project-target-amount").value.replace(/,/g, ""),
-            user: { userId: 1 } // 사용자 ID를 동적으로 설정
+            user: { userId: userIdInput.value }, // 동적으로 가져온 사용자 ID 사용
         };
 
-
         try {
-            const response = await fetch("/api/projects/apply", {
+            const response = await fetch(`${API_BASE_URL}/apply`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
@@ -79,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
             form.reset();
             amountInKorean.textContent = ""; // 초기화
         } catch (error) {
-            console.error(error);
+            console.error("프로젝트 신청 중 오류:", error);
             alert("프로젝트 신청 중 오류가 발생했습니다.");
         }
     });

@@ -11,6 +11,10 @@
 <div class="project-create-container">
     <h2>프로젝트 신청</h2>
     <form id="project-create-form">
+        <div class="form-group" style="display: none;">
+            <label for="user-id">사용자 ID</label>
+            <input type="text" id="user-id" name="user_id" readonly>
+        </div>
         <div class="form-group">
             <label for="project-name">프로젝트 이름</label>
             <input type="text" id="project-name" name="name" placeholder="프로젝트 이름을 입력하세요" required>

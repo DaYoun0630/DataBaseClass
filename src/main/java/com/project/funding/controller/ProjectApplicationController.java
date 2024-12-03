@@ -1,26 +1,36 @@
 package com.project.funding.controller;
 
-import com.project.funding.model.Category;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.project.funding.model.ProjectApplication;
-import com.project.funding.service.ProjectApplicationService;
+import com.project.funding.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
-// 프로젝트 관련 API를 제공하는 컨트롤러
 @RestController
 @RequestMapping("/api/projects")
 public class ProjectApplicationController {
 
     @Autowired
-    private ProjectApplicationService projectApplicationService;
+    private JwtTokenProvider jwtTokenProvider;
 
-    // 카테고리별 승인된 프로젝트 조회
-    @GetMapping("/category/{categoryId}")
-    public List<ProjectApplication> getProjectsByCategory(@PathVariable Long categoryId) {
-        Category category = new Category(); // 카테고리 객체 생성
-        category.setId(categoryId); // ID 설정
-        return projectApplicationService.getProjectsByCategory(category); // 서비스 호출
+    @GetMapping("/current-user")
+    public ResponseEntity<String> getCurrentUserId(@RequestHeader("Authorization") String token) {
+        System.out.println("Received token: " + token);
+        String userId = jwtTokenProvider.getUserIdFromJWT(token);
+        System.out.println("Extracted userId: " + userId);
+        return ResponseEntity.ok(userId);
+    }
+
+    @PostMapping("/apply")
+    public ResponseEntity<String> applyProject(@RequestBody ProjectApplication projectApplication) {
+        try {
+            System.out.println("Received project application: " + new ObjectMapper().writeValueAsString(projectApplication));
+            // 요청 데이터 확인 및 처리 로직 (서비스 호출 등)
+            return ResponseEntity.ok("프로젝트 신청이 성공적으로 저장되었습니다.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(500).body("프로젝트 신청 처리 중 오류가 발생했습니다.");
+        }
     }
 }

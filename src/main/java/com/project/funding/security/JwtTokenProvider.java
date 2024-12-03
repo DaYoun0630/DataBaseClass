@@ -5,22 +5,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtTokenProvider {
 
-    // JWT 토큰 생성 (더 이상 사용하지 않음)
-    public String generateToken(Object authentication) {
-        return "dummy-token"; // 더미 토큰 반환
+    // 사용자 ID를 포함하는 더미 토큰 생성
+    public String generateToken(String userId) {
+        return "Bearer " + userId; // 단순히 "Bearer {userId}" 형태로 반환
     }
 
-    // 토큰에서 사용자 ID 추출 (더 이상 사용하지 않음)
+    // 토큰에서 사용자 ID 추출
     public String getUserIdFromJWT(String token) {
-        return "dummy-user-id"; // 더미 사용자 ID 반환
+        try {
+            // 토큰 파싱 로직
+            return token.substring(7); // "Bearer " 제거 후 반환
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid token", e);
+        }
     }
 
-    /**
-     * JWT 토큰 유효성 검사 (항상 true 반환)
-     * @param authToken JWT 토큰
-     * @return 유효 여부
-     */
+    // 토큰 유효성 검사 (항상 true 반환)
     public boolean validateToken(String authToken) {
-        return true; // 항상 유효한 토큰으로 간주
+        return authToken != null && authToken.startsWith("Bearer ");
     }
 }

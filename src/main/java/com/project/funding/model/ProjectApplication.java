@@ -4,7 +4,7 @@ import com.project.funding.repository.StatefulEntity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 // 프로젝트 신청 정보를 나타내는 엔터티 클래스
 @Entity
@@ -27,10 +27,10 @@ public class ProjectApplication implements StatefulEntity<ProjectApplicationStat
     private String projectDescription; // 프로젝트 상세 설명
 
     @Column(name = "project_start_date", nullable = false) // 프로젝트 시작 날짜 컬럼
-    private LocalDateTime projectStartDate; // 프로젝트 시작 날짜
+    private LocalDate projectStartDate; // 프로젝트 시작 날짜
 
     @Column(name = "project_end_date", nullable = false) // 프로젝트 종료 날짜 컬럼
-    private LocalDateTime projectEndDate; // 프로젝트 종료 날짜
+    private LocalDate projectEndDate; // 프로젝트 종료 날짜
 
     @Column(name = "project_target_amount", nullable = false, precision = 10, scale = 2) // 프로젝트 목표 금액 컬럼
     private BigDecimal projectTargetAmount; // 프로젝트 목표 금액 (소수점 포함)
@@ -89,19 +89,19 @@ public class ProjectApplication implements StatefulEntity<ProjectApplicationStat
         this.projectDescription = projectDescription; // 프로젝트 설명 설정
     }
 
-    public LocalDateTime getProjectStartDate() {
+    public LocalDate getProjectStartDate() {
         return projectStartDate; // 프로젝트 시작 날짜 반환
     }
 
-    public void setProjectStartDate(LocalDateTime projectStartDate) {
+    public void setProjectStartDate(LocalDate projectStartDate) {
         this.projectStartDate = projectStartDate; // 프로젝트 시작 날짜 설정
     }
 
-    public LocalDateTime getProjectEndDate() {
+    public LocalDate getProjectEndDate() {
         return projectEndDate; // 프로젝트 종료 날짜 반환
     }
 
-    public void setProjectEndDate(LocalDateTime projectEndDate) {
+    public void setProjectEndDate(LocalDate projectEndDate) {
         this.projectEndDate = projectEndDate; // 프로젝트 종료 날짜 설정
     }
 
