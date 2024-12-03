@@ -1,26 +1,37 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // 알림 설정 값 불러오기 (예시로 localStorage 사용)
+    // 알림 설정 값 불러오기 (로컬 스토리지에서 값 읽기)
     const complaintsCheckbox = document.getElementById("complaints");
     const commentsCheckbox = document.getElementById("comments");
     const projectsCheckbox = document.getElementById("projects");
     const donationsCheckbox = document.getElementById("donations");
 
-    // 예시로 JSON 사용, 나중에 수정할 것!
-    // localStorage에서 알림 설정 값 불러오기 (없으면 기본값 true)
-    complaintsCheckbox.checked = JSON.parse(localStorage.getItem("complaints")) || true;
-    commentsCheckbox.checked = JSON.parse(localStorage.getItem("comments")) || true;
-    projectsCheckbox.checked = JSON.parse(localStorage.getItem("projects")) || false;
-    donationsCheckbox.checked = JSON.parse(localStorage.getItem("donations")) || true;
+    // 로컬 스토리지에서 알림 설정 값 불러오기 (기본값: true)
+    complaintsCheckbox.checked = localStorage.getItem("complaints") === "true" || true;
+    commentsCheckbox.checked = localStorage.getItem("comments") === "true" || true;
+    projectsCheckbox.checked = localStorage.getItem("projects") === "true" || true;
+    donationsCheckbox.checked = localStorage.getItem("donations") === "true" || true;
+
+    // 콘솔 로그 추가: 로컬 스토리지에서 불러온 값 확인 - 필요? 삭제?
+    console.log("complaints:", localStorage.getItem("complaints"));
+    console.log("comments:", localStorage.getItem("comments"));
+    console.log("projects:", localStorage.getItem("projects"));
+    console.log("donations:", localStorage.getItem("donations"));
 
     // 저장 버튼 클릭 시
     document.getElementById("notification-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
-        // 각 알림 수신 여부 저장
+        // 각 알림 수신 여부 로컬 스토리지에 저장
         localStorage.setItem("complaints", complaintsCheckbox.checked);
         localStorage.setItem("comments", commentsCheckbox.checked);
         localStorage.setItem("projects", projectsCheckbox.checked);
         localStorage.setItem("donations", donationsCheckbox.checked);
+
+        // 콘솔 로그 추가: 저장된 값 확인 - 필요할까? 삭제?
+        console.log("저장된 complaints:", complaintsCheckbox.checked);
+        console.log("저장된 comments:", commentsCheckbox.checked);
+        console.log("저장된 projects:", projectsCheckbox.checked);
+        console.log("저장된 donations:", donationsCheckbox.checked);
 
         // 팝업 표시
         document.getElementById("popup").style.display = "flex";
