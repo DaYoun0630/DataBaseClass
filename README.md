@@ -13,3 +13,4 @@
 
 12/3(화)
 - mypage 수정
+- notification 추가 : 알림 설정 화면
