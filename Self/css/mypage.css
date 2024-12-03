@@ -1,4 +1,4 @@
-/* 기본 스타일 */
+/* 전체 기본 스타일 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -6,120 +6,102 @@ body {
     padding: 0;
 }
 
-/* 마이페이지 컨테이너 */
-.mypage-container {
+.project-status, .donation {
     width: 80%;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 40px auto;
     background-color: #fff;
+    padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
-/* 개인정보 수정 버튼 */
-.edit-profile-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 10px 20px;
+/* 마이페이지 기본 스타일 */
+.mypage {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 110px;
+}
+
+/* 섹션 제목 스타일 */
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 프로젝트 목록 및 후원 목록 스타일 */
+.project-list, .donation-list {
+    margin-bottom: 40px;
+}
+
+.project, .donation-item {
+    margin-bottom: 20px;
+}
+
+.project h3, .donation-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    font-size: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+li .status {
+    color: #888;
+    font-weight: bold;
+}
+
+/* 상태 텍스트 스타일 */
+.status {
+    font-size: 14px;
+}
+
+/* 사용자 설정 버튼 스타일 */
+.user-settings {
+    display: flex;             
+    justify-content: flex-start; 
+    gap: 100px;                
+    margin-top: 20px;          
+}
+
+.user-settings button {
     font-size: 14px;
     background-color: darkslateblue;
     color: white;
     border: none;
     border-radius: 5px;
+    padding: 6px 20px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.edit-profile-btn:hover {
-    background-color: rgb(33, 26, 76);
-}
-
-/* 공통 프로젝트 목록 섹션 */
-.project-list {
-    margin-bottom: 40px;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.project-list h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.project-list ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.project-list li {
-    padding: 8px 0;
-    font-size: 18px;
-    color: #555;
-}
-
-/* 찜한 프로젝트 섹션 강조 */
-.favorite-projects {
-    background-color: whitesmoke;
-}
-
-/* 후원한 프로젝트 섹션 강조 */
-.sponsored-projects {
-    background-color: whitesmoke;
-}
-
-/* 알림 설정 섹션 */
-.notification-settings {
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: whitesmoke;
-}
-
-.notification-settings h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.notification-item {
-    margin-bottom: 15px;
-}
-
-.notification-item label {
-    font-size: 18px;
-    margin-right: 10px;
-}
-
-.notification-item input[type="radio"] {
-    margin-right: 5px;
-}
-
-.notification-item input[type="radio"]:checked {
-    accent-color: #007bff;
-}
-
-/* 적용 버튼 스타일 */
-.apply-button {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.apply-btn {
-    padding: 12px 25px;
-    font-size: 16px;
-    background-color: darkslateblue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: 80px;               
     transition: background-color 0.3s ease;
 }
 
-.apply-btn:hover {
-    background-color: rgb(48, 39, 106);
+.user-settings button:hover {
+    background-color: rgb(33, 26, 76);
 }
+
+.user-settings button {
+    flex-grow: 1; 
+    /*max-width: 150px; */
+}
+
+
+/* 프로젝트 리스트 및 후원 리스트 항목 간 구분선 */
+.project-list ul, .donation-list ul {
+    border-left: 3px solid #f1f1f1;
+    padding-left: 20px;
+}
+
+/* 각 섹션 간 간격 */
+#self-input, #pay-input, #address-input {
+    margin-bottom: 40px;
+}
+
