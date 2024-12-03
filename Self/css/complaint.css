@@ -37,7 +37,7 @@ h2 {
     font-size: 1.1rem;
 }
 
-#create-complaint-btn {
+#complaintCreate-btn {
     display: block;
     width: 100%;
     padding: 12px;
@@ -50,6 +50,6 @@ h2 {
     margin-top: 20px;
 }
 
-#create-complaint-btn :hover {
+#complaintCreate-btn :hover {
     background-color: darkslateblue;
 }
