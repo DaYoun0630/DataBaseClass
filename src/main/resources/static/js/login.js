@@ -18,7 +18,8 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     .then(response => response.json()) // 서버 응답을 JSON 형식으로 받기
     .then(data => {
         if (data.success) {
-            window.location.href = 'index.html'; // 로그인 성공 시 메인 페이지로 이동
+            // 로그인 성공 시 메인 페이지로 이동
+            window.location.href = 'mainPage.html';
         } else {
             alert('로그인 실패: ' + data.message); // 로그인 실패 시 메시지 표시
         }

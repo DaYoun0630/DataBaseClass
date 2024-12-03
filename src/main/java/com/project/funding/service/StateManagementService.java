@@ -1,5 +1,7 @@
 package com.project.funding.service;
 
+import com.project.funding.model.ProjectApplication;
+import com.project.funding.model.ProjectApplicationState;
 import com.project.funding.repository.State;
 import com.project.funding.repository.StatefulEntity;
 import org.springframework.stereotype.Service;
@@ -17,4 +19,5 @@ public class StateManagementService {
     public <T extends State> String getCurrentStateName(StatefulEntity<T> entity) {
         return entity.getState().getStateName(); // 현재 상태 이름 반환
     }
+
 }
