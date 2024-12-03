@@ -7,14 +7,27 @@ public enum ProjectApplicationState implements State {
     APPROVED("승인됨"),
     REJECTED("반려됨");
 
-    private final String stateName;
+    private final String displayName;
 
-    ProjectApplicationState(String stateName) {
-        this.stateName = stateName;
+    ProjectApplicationState(String displayName) {
+        this.displayName = displayName;
     }
 
     @Override
     public String getStateName() {
-        return stateName;
+        return displayName;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public static ProjectApplicationState fromDisplayName(String displayName) {
+        for (ProjectApplicationState state : values()) {
+            if (state.displayName.equals(displayName)) {
+                return state;
+            }
+        }
+        throw new IllegalArgumentException("Unknown displayName: " + displayName);
     }
 }

@@ -43,7 +43,7 @@ public class ProjectApplication implements StatefulEntity<ProjectApplicationStat
     @Column(name = "project_application_date", nullable = false)
     private LocalDate projectApplicationDate;
 
-    // StatefulEntity 인터페이스 구현
+    // StatefulEntity Interface Implementation
     @Override
     public ProjectApplicationState getState() {
         return state;
@@ -54,7 +54,7 @@ public class ProjectApplication implements StatefulEntity<ProjectApplicationStat
         this.state = state;
     }
 
-    // Getter 및 Setter 추가
+    // Getters and Setters
     public Long getProjectApplicationId() {
         return projectApplicationId;
     }
