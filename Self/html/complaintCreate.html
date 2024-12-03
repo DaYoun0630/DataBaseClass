@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>민원 작성</title>
+    <link rel="stylesheet" href="../css/complaintCreate.css">
+</head>
+<body>
+    <!--헤더 삽입-->
+    <div id="headerContainer"></div>
+    <div id="main-content">
+    <div class="complaint-create-container">
+        <h2>민원 작성하기</h2>
+
+        <form id="complaint-create-form">
+            <!-- 민원 유형 선택 -->
+            <div class="form-group">
+                <label for="complaint-type">민원 유형</label>
+                <select id="complaint-type" required>
+                    <option value="배송">배송</option>
+                    <option value="제품 불량">제품 불량</option>
+                    <option value="결제 오류">결제 오류</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+
+            <!-- 제목 입력 -->
+            <div class="form-group">
+                <label for="complaint-title">제목</label>
+                <input type="text" id="complaint-title" placeholder="제목을 입력하세요" required>
+            </div>
+
+            <!-- 내용 입력 -->
+            <div class="form-group">
+                <label for="complaint-content">내용</label>
+                <textarea id="complaint-content" placeholder="내용을 입력하세요" required></textarea>
+            </div>
+
+            <!-- 민원 등록 버튼 -->
+            <button id="register-complaint-btn" type="submit">민원 등록</button>
+        </form>
+    </div>
+    </div>
+
+    <script src="../js/complaintCreate.js"></script>
+    <script src ="../js/header.js"></script>
+</body>
+</html>

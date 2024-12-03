@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 신청</title>
+    <link rel="stylesheet" href="../css/projectCreate.css">
+</head>
+<body>
+    <!--헤더 삽입-->
+    <div id="headerContainer"></div>
+
+    <div class="project-create-container">
+        <h2>프로젝트 신청</h2>
+        <form id="project-create-form">
+            <div class="form-group">
+                <label for="project-name">프로젝트 이름</label>
+                <input type="text" id="project-name" name="name" placeholder="프로젝트 이름을 입력하세요" required>
+            </div>
+            <div class="form-group">
+                <label for="project-content">프로젝트 내용</label>
+                <textarea id="project-content" name="content" placeholder="프로젝트 내용을 입력하세요" required></textarea>
+            </div>
+            <!-- 첨부파일 추가 부분 -->
+            <div class="form-group">
+                <label for="project-file">첨부파일</label>
+                <input type="file" id="project-file" name="file">
+            </div>
+            <div class="form-group"> 
+                <button type="submit" id="submit-project-btn">프로젝트 심사 신청</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/projectCreate.js"></script>
+    <script src="../js/header.js"></script>
+</body>
+</html>
