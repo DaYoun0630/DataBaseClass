@@ -1,0 +1,88 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+}
+
+header .nav-bar input {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+header .nav-bar button {
+    margin-left: 5px;
+    background-color: white;
+    color: #6200ea;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* 프로젝트 상세 */
+.project-detail {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.project-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.project-info {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project-info .funding-btn {
+    margin-top: 10px;
+    background-color: #6200ea;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 상세 설명 */
+.project-description {
+    margin-top: 30px;
+}
+
+.project-description img {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* 리워드 선택 */
+.reward-selection {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reward-selection .reward {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
