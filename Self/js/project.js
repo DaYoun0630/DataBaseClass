@@ -1,15 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // 검색 버튼 동작
-    const searchButton = document.querySelector(".search-bar button");
-    searchButton.addEventListener("click", () => {
-      const query = document.querySelector(".search-bar input").value;
-      alert(`"${query}" 검색 결과를 보여줍니다.`);
-    });
-  
-    // 프로젝트 만들기 버튼
-    const createProjectButton = document.querySelector(".create-project");
-    createProjectButton.addEventListener("click", () => {
-      alert("프로젝트 만들기 페이지로 이동합니다!");
-    });
-  });
-  
+document.getElementById("checkout-btn").addEventListener("click", function() {
+    const product = document.getElementById("product").value;
+    const quantity = document.getElementById("quantity").value;
+    
+    const cartSummary = `선택한 상품: ${product}, 개수: ${quantity}`;
+    document.getElementById("cart-summary").textContent = cartSummary;
+}); 
