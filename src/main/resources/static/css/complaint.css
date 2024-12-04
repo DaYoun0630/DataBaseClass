@@ -20,23 +20,47 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 h2 {
     text-align: left;
     margin-bottom: 20px;
+    color: darkslateblue;
 }
 
-.complaint-list ul {
-    list-style-type: none;
-    padding: 0;
+/* 테이블 스타일 */
+#complaint-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+    background-color: white;
 }
 
-.complaint-list li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+#complaint-data-table th,
+#complaint-data-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
 }
 
+#complaint-data-table thead th {
+    background-color: darkslateblue;
+    color: white;
+    font-weight: bold;
+}
+
+#complaint-data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#complaint-data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* 버튼 스타일 */
 #complaintCreate-btn {
     display: block;
     width: 100%;
@@ -48,8 +72,20 @@ h2 {
     font-size: 1.2rem;
     cursor: pointer;
     margin-top: 20px;
+    transition: background-color 0.3s ease;
 }
 
-#complaintCreate-btn :hover {
-    background-color: darkslateblue;
+#complaintCreate-btn:hover {
+    background-color: slateblue;
+}
+
+/* 목록 정렬 스타일 */
+.complaint-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.complaint-list li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
 }
