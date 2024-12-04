@@ -14,74 +14,68 @@
         <!-- 개인정보 -->
         <section class="pay-info">
             <h2>개인정보 입력</h2>
-            <ul id="self-input">
-                <form id="info-form">
-                    <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">이메일</label>
-                        <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone-number-personal">전화번호</label>
-                        <input type="tel" id="phone-number-personal" name="phone-number-personal" placeholder="전화번호를 입력하세요" required>
-                    </div>
-                </form>
-            </ul>
+            <form id="info-form">
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone-number-personal">전화번호</label>
+                    <input type="tel" id="phone-number-personal" name="phone-number-personal" placeholder="전화번호를 입력하세요" required>
+                </div>
+            </form>
 
             <!-- 결제정보 -->
             <h2>결제정보 입력</h2>
-            <ul id="pay-input">
-                <form id="payinfo-form">
-                    <div class="notification-item">
-                        <label for="complaints-notification">결제 수단</label>
-                        <input type="radio" id="creditcard" name="complaints" value="creditcard" checked> 신용카드
-                        <input type="radio" id="bank" name="complaints" value="bank"> 무통장 입금
-                        <input type="radio" id="phone" name="complaints" value="phone"> 휴대폰 결제
-                    </div>
+            <form id="payinfo-form">
+                <div class="notification-item">
+                    <label for="complaints-notification">결제 수단</label>
+                    <input type="radio" id="creditcard" name="complaints" value="creditcard" checked> 신용카드
+                    <input type="radio" id="bank" name="complaints" value="bank"> 무통장 입금
+                    <input type="radio" id="phone" name="complaints" value="phone"> 휴대폰 결제
+                </div>
 
-                    <!-- 신용카드 입력 -->
-                    <div id="creditcard-input" style="display:none;">
-                     <label for="card-number">카드번호 입력</label>
-                     <input type="text" id="card-number" name="card-number" placeholder="카드번호 입력" required>
-                    </div>
+                <!-- 신용카드 입력 -->
+                <div id="creditcard-input" style="display:none;">
+                 <label for="card-number">카드번호 입력</label>
+                 <input type="text" id="card-number" name="card-number" placeholder="카드번호 입력" required>
+                </div>
 
-                    <!-- 무통장입금 입력 -->
-                    <div id="bank-input" style="display:none;">
-                        <label for="bank-name">은행 선택</label>
-                        <select id="bank-name" name="bank-name">
-                            <option value="shinhan">신한은행</option>
-                            <option value="kb">KB국민은행</option>
-                            <option value="woori">우리은행</option>
-                        </select>
-                        <label for="account-number">계좌번호</label>
-                        <input type="text" id="account-number" name="account-number" placeholder="계좌번호 입력" required>
-                    </div>
+                <!-- 무통장입금 입력 -->
+                <div id="bank-input" style="display:none;">
+                    <label for="bank-name">은행 선택</label>
+                    <select id="bank-name" name="bank-name">
+                        <option value="shinhan">신한은행</option>
+                        <option value="kb">KB국민은행</option>
+                        <option value="woori">우리은행</option>
+                    </select>
+                    <label for="account-number">계좌번호</label>
+                    <input type="text" id="account-number" name="account-number" placeholder="계좌번호 입력" required>
+                </div>
 
-                    <!-- 휴대폰 결제 입력 -->
-                    <div id="phone-input" style="display:none;">
-                        <label for="phone-number-payment">휴대폰 번호 입력</label>
-                        <input type="text" id="phone-number-payment" name="phone-number-payment" placeholder="휴대폰 번호 입력" required>
-                    </div>
-                </form>
-            </ul>
+                <!-- 휴대폰 결제 입력 -->
+                <div id="phone-input" style="display:none;">
+                    <label for="phone-number-payment">휴대폰 번호 입력</label>
+                    <input type="text" id="phone-number-payment" name="phone-number-payment" placeholder="휴대폰 번호 입력" required>
+                </div>
+            </form>
         
         <!-- 배송정보 -->
             <h2>배송정보 입력</h2>
-            <ul id="address-input">
-                <form id="addressinfo-form">
-                    <div class="form-group">
-                        <label for="address">주소</label>
-                        <input type="text" id="address" name="address" placeholder="주소를 입력하세요" required>
-                    </div>
-                    <!--후원 버튼-->
-                    <div>
-                        <button type="button" id="donation-btn">후원하기</button>
-                    </div>
-                </form>                
-            </ul>
+            <form id="addressinfo-form">
+                <div class="form-group">
+                    <label for="address">주소</label>
+                    <input type="text" id="address" name="address" placeholder="주소를 입력하세요" required>
+                </div>
+                <!--후원 버튼-->
+                <div>
+                    <button type="button" id="donation-btn">후원하기</button>
+                </div>
+            </form>                
         </section>
     </div>
     <script src="../js/donation.js"></script>
