@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>크라우드 펀딩 플랫폼</title>
-  <link rel="stylesheet" href="project-detail.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트 페이지</title>
+    <link rel="stylesheet" href="../css/project.css">
 </head>
 <body>
-  <!-- 헤더 -->
-  <header>
-    <h1>CrowdFunding</h1>
-    <div class="header-buttons">
-      <button id="mypage">마이페이지</button>
-      <button id="login">로그인</button>
-      <button id="logout">로그아웃</button>
+    <div class="container">
+        <!-- 프로젝트 정보 섹션 -->
+        <div class="project-info">
+            <h1 class="project-title">프로젝트 이름</h1>
+            <p class="project-description">프로젝트 설명: 예시 웹페이지</p>
+            <div class="project-details">
+                <h2>프로젝트 상세 정보</h2>
+                <p>상세 정보 내용: </p>
+            </div>
+            <div class="creator-info">
+                <h2>창작자 정보</h2>
+                <p>창작자: 홍길동</p>
+                <p>이메일: hong@example.com</p>
+            </div>
+        </div>
+
+        <!-- 결제 및 상품 선택 창 -->
+        <div class="cart">
+            <h2>상품 선택</h2>
+            <label for="product">상품 종류:</label>
+            <select id="product">
+                <option value="product1">상품 1</option>
+                <option value="product2">상품 2</option>
+                <option value="product3">상품 3</option>
+            </select>
+            <br>
+            <label for="quantity">개수:</label>
+            <input type="number" id="quantity" value="1" min="1">
+            <br>
+            <button id="checkout-btn">결제</button>
+            <p id="cart-summary"></p>
+        </div>
     </div>
-  </header>
 
-  <!-- 검색바 -->
-  <section class="search-bar">
-    <input type="text" placeholder="검색어를 입력하세요">
-    <button>검색</button>
-  </section>
-
-  <!-- 카테고리 -->
-  <nav class="category-bar">
-    <button>가전</button>
-    <button>문구</button>
-    <button>창작</button>
-    <button>패션</button>
-    <button>게임</button>
-    <button>도서</button>
-    <button>기타</button>
-  </nav>
-
-  <!-- 프로젝트 목록 -->
-  <main class="project-list">
-    <div class="project-card">
-      <img src="fan.jpg" alt="선풍기 이미지">
-      <h3>[사례] 사계절 캠핑 쿨링 팬</h3>
-      <p>가격: 59,000원</p>
-      <p>후원자: 42명</p>
-    </div>
-    <div class="project-card">
-      <img src="lego.jpg" alt="레고 이미지">
-      <h3>[키트] 내 키트로 레고 만들기</h3>
-      <p>가격: 398,000원</p>
-      <p>후원자: 200명</p>
-    </div>
-    <!-- 추가 카드 -->
-  </main>
-
-  <!-- 하단 버튼 -->
-  <footer>
-    <button class="create-project">프로젝트 만들기</button>
-  </footer>
-  
-  <script src="./js/project.js"></script>
+    <script src="../js/project.js"></script>
 </body>
 </html>
