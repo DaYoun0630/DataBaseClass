@@ -1,31 +1,89 @@
 package com.project.funding.model;
-//민원
-
-import com.project.funding.repository.StatefulEntity;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "complaints")
-public class Complaint implements StatefulEntity<ComplaintState> {
+@Table(name = "complaint")
+public class Complaint {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "complaint_id") // complaint_id와 매핑
     private Long id;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "state", nullable = false)
-    private ComplaintState state = ComplaintState.PENDING;
+    @Column(name = "user_id", nullable = false)
+    private Long userId;
 
-    // Other fields...
+    @Column(name = "complaint_content", nullable = false)
+    private String content;
 
-    @Override
-    public ComplaintState getState() {
-        return state;
+    @Column(name = "complaint_creation_date", nullable = false)
+    private String creationDate;
+
+    @Convert(converter = ComplaintStateConverter.class)
+    @Column(name = "complaint_status_type", nullable = false)
+    private ComplaintState statusType;
+
+    @Column(name = "employee_id")
+    private Long employeeId;
+
+    @Column(name = "complaint_answer")
+    private String answer;
+
+    // Getters and setters
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public void setState(ComplaintState state) {
-        this.state = state;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(String creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public ComplaintState getStatusType() {
+        return statusType;
+    }
+
+    public void setStatusType(ComplaintState statusType) {
+        this.statusType = statusType;
+    }
+
+    public Long getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(String answer) {
+        this.answer = answer;
     }
 }

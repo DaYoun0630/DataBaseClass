@@ -1,5 +1,3 @@
-//회원가입 창
-
 document.getElementById('info-form').addEventListener('submit', function(event) {
     event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
 
@@ -72,4 +70,17 @@ document.addEventListener("DOMContentLoaded", function() {
     phoneRadio.addEventListener("change", togglePaymentFields);
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const projectName = params.get("projectName");
+    const targetAmount = params.get("targetAmount");
+    const quantity = params.get("quantity");
+
+    if (projectName && targetAmount && quantity) {
+        // 페이지에 전달받은 데이터 표시
+        document.getElementById("project-name-display").innerText = projectName;
+        document.getElementById("target-amount-display").innerText = targetAmount;
+        document.getElementById("quantity-display").innerText = quantity;
+    }
+});
 

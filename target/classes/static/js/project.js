@@ -73,3 +73,18 @@ document.addEventListener("DOMContentLoaded", function() {
             console.error("Error fetching project data:", error);
         });
 });
+document.getElementById("checkout-btn").addEventListener("click", () => {
+    const projectName = document.getElementById("project-title").innerText; // 프로젝트 이름
+    const targetAmount = document.getElementById("project-target-amount").innerText; // 목표 금액
+    const quantity = document.getElementById("quantity").value; // 선택한 개수
+
+    // 쿼리 파라미터로 전달
+    const params = new URLSearchParams({
+        projectName,
+        targetAmount,
+        quantity
+    });
+
+    // donation.html로 이동
+    window.location.href = `donation.html?${params.toString()}`;
+});

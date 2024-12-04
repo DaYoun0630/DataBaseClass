@@ -31,39 +31,6 @@ public class AuthController {
      * @param signUpRequest 회원가입 요청 데이터
      * @return ResponseEntity 회원가입 성공 또는 실패 응답
      */
-//    @PostMapping("/signup")
-//    public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-//        // ID 중복 체크
-//        if (userRepository.existsById(signUpRequest.getUserId())) {
-//            return ResponseEntity.badRequest().body(new ApiResponse(false, "사용 중인 아이디입니다."));
-//        }
-//
-//        // 사용자 생성 및 필드 설정
-//        User user = new User();
-//        user.setUserId(signUpRequest.getUserId());
-//        user.setUserName(signUpRequest.getUserName());
-//        user.setUserPassword(signUpRequest.getUserPassword()); // 비밀번호는 해시 처리 등 추가 고려 필요
-//        user.setUserPhoneNumber(signUpRequest.getUserPhoneNumber());
-//        user.setUserBirthdate(LocalDate.parse(signUpRequest.getUserBirthdate()));
-//        user.setUserAddress(signUpRequest.getUserAddress());
-//
-//        // 사용자 저장
-//        try {
-//            userRepository.save(user);
-//        } catch (ConstraintViolationException e) {
-//            e.getConstraintViolations().forEach(violation -> {
-//                logger.error("유효성 검사 실패 - {}: {}", violation.getPropertyPath(), violation.getMessage());
-//            });
-//            throw e; // 예외를 다시 던져 호출자에게 알림
-//        } catch (Exception e) {
-//            logger.error("회원가입 처리 중 오류 발생: {}", e.getMessage());
-//            throw e;
-//        }
-//
-//        // 성공 응답 반환
-//        return ResponseEntity.ok(new ApiResponse(true, "회원가입이 완료되었습니다."));
-//    }
-
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
         // ID 중복 체크
