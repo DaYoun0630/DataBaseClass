@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>후원 수정</title>
+    <link rel="stylesheet" href="../css/editdonation.css">
+</head>
+<body>
+    <!--헤더 삽입-->
+    <div id="headerContainer"></div>
+
+    <div class="donation-edit">
+        <h2>후원 정보 수정</h2>
+
+        <form id="donation-edit-form">
+            <!-- 후원자 정보 -->
+            <div class="form-group">
+                <label for="donor-name">후원자 이름</label>
+                <input type="text" id="donor-name" name="donor-name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="donor-email">이메일</label>
+                <input type="email" id="donor-email" name="donor-email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="donor-phone">전화번호</label>
+                <input type="text" id="donor-phone" name="donor-phone" required>
+            </div>
+
+            <!-- 결제 정보 -->
+            <div class="form-group">
+                <label for="payment-method">결제 방법</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="creditcard">신용카드</option>
+                    <option value="bank">계좌이체</option>
+                    <option value="mobile">휴대폰 결제</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="creditcard-info" style="display:none;">
+                <label for="card-number">카드 번호</label>
+                <input type="text" id="card-number" name="card-number">
+            </div>
+
+            <div class="form-group" id="bank-info" style="display:none;">
+                <label for="bank-name">은행명</label>
+                <input type="text" id="bank-name" name="bank-name">
+                
+                <label for="account-number">계좌번호</label>
+                <input type="text" id="account-number" name="account-number">
+            </div>
+
+            <div class="form-group" id="mobile-info" style="display:none;">
+                <label for="mobile-number">휴대폰 번호</label>
+                <input type="text" id="mobile-number" name="mobile-number">
+            </div>
+
+            <!-- 배송 정보 -->
+            <div class="form-group">
+                <label for="address">주소</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <!-- 버튼들 -->
+            <div id="btn-container">
+                <button type="submit" id="save-btn">저장</button>
+                <button type="button" id="back-btn">취소</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="../js/editdonation.js"></script>
+    <script src="../js/header.js"></script>
+</body>
+</html>
