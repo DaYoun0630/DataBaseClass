@@ -23,7 +23,6 @@ paymentOptions.forEach(option => {
     });
 });
 
-// 페이지 로딩 시 기본으로 선택된 결제 방법의 입력란을 보이도록 설정
 window.addEventListener('DOMContentLoaded', function() {
     const checkedOption = document.querySelector('input[name="complaints"]:checked');
     if (checkedOption) {
