@@ -1,0 +1,100 @@
+/* 전체 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* donation 컨테이너 */
+.donation {
+    width: 80%;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top : 60px;
+}
+
+/* 각 섹션 제목 스타일 */
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* 각 섹션의 입력 폼 */
+form {
+    margin-top: 20px;
+}
+
+/* form-group 기본 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 레이블 스타일 */
+label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* 입력 필드 스타일 */
+#name, 
+#email, 
+#phone-number,
+#address {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 라디오 버튼 스타일 */
+.notification-item input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+
+/* 결제정보 라디오 버튼 영역 스타일 */
+.notification-item {
+    margin-bottom: 20px;
+}
+
+/* 항목 간 간격을 두기 위해 마진 설정 */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.payment-input {
+    display: none;
+}
+
+/* 후원하기 버튼 */
+#donation-btn {
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 12px 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* 후원하기 버튼 hover 효과 */
+#donation-btn:hover {
+    background-color: rgb(33, 26, 76);
+}
+
+/* 각 섹션 간 간격 */
+#self-input, #pay-input, #address-input {
+    margin-bottom: 40px;
+}

@@ -1,0 +1,72 @@
+/* 상단 네비게이션 바 */
+#navbar {
+    background-color: darkslateblue;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;  /* 다른 요소들보다 위에 나타나게 설정 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: 0px;
+}
+
+/* 로고 */
+#navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 오른쪽 상단 버튼들 */
+.user-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.user-button {
+    background-color: midnightblue;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.user-button:hover {
+    background-color: slateblue;
+}
+
+/* 검색창 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-container button {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: white;
+    border: 1px solid darkslateblue;
+    color: darkslateblue;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <link rel="stylesheet" href="../css/mypage.css">
+</head>
+<body>
+    <!--헤더 삽입-->
+    <div id="headerContainer"></div>
+
+    <!-- 마이페이지 -->
+    <div class="mypage">
+
+        <!-- 첫 번째 블록: 프로젝트 목록 -->
+        <section class="project-list">
+            <h2>내 프로젝트</h2>
+            <div class="project-status">
+                <div class="project">
+                    <h3>신청한 프로젝트</h3>
+                    <ul id="applied-projects">
+                        <li>프로젝트 A <span class="status">심사 중</span></li>
+                        <li>프로젝트 B <span class="status">심사 완료</span></li>
+                        <li>프로젝트 C <span class="status">심사 중</span></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>진행 중인 프로젝트</h3>
+                    <ul id="ongoing-projects">
+                        <li>프로젝트 D <span class="status">진행 중</span></li>
+                        <li>프로젝트 E <span class="status">진행 중</span></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <h3>완료한 프로젝트</h3>
+                    <ul id="completed-projects">
+                        <li>프로젝트 F <span class="status">완료</span></li>
+                        <li>프로젝트 G <span class="status">완료</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 두 번째 블록: 후원 목록 -->
+        <section class="donation-list">
+            <h2>후원 목록</h2>
+            <div class="donation">
+                <div class="donation-item">
+                    <h3>후원 예정 프로젝트</h3>
+                    <ul id="pending-donations">
+                        <li>프로젝트 H</li>
+                        <li>프로젝트 I</li>
+                    </ul>
+                </div>
+
+                <div class="donation-item">
+                    <h3>후원한 프로젝트</h3>
+                    <ul id="donated-projects">
+                        <li>프로젝트 J</li>
+                        <li>프로젝트 K</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 세 번째 블록: 사용자 설정 -->
+        <section class="user-settings">
+            <h2>사용자 설정</h2>
+            <button id="userProfile-btn">개인정보</button>
+            <button id="notification-btn">알림 설정</button>
+            <button id="delete-account-btn">탈퇴</button>
+        </section>
+    </div>
+
+    <script src="../js/mypage.js"></script>
+    <script src="../js/header.js"></script>
+</body>
+</html>
