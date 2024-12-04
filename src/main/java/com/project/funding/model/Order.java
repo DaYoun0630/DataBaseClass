@@ -45,8 +45,8 @@ public class Order extends DateAudit{
     private User user;
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "product_id", nullable = false)
-    private Projects product;
+    @JoinColumn(name = "project_id", nullable = false)
+    private Projects project;
 
 	public Long getId() {
 		return id;
@@ -104,12 +104,12 @@ public class Order extends DateAudit{
 		this.user = user;
 	}
 
-	public Projects getProduct() {
-		return product;
+	public Projects getProject() {
+		return project;
 	}
 
-	public void setProduct(Projects product) {
-		this.product = product;
+	public void setProject(Projects project) {
+		this.project = project;
 	}
 
 

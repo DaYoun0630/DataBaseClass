@@ -1,10 +1,10 @@
 // 장바구니에 상품 추가하는 기능
-function addToCart(productName) {
-    alert(productName + "이(가) 장바구니에 추가되었습니다!");
+function addToCart(projectName) {
+    alert(projectName + "이(가) 장바구니에 추가되었습니다!");
 }
 
 // 검색 기능
-function searchProduct() {
+function searchProject() {
     const query = document.getElementById('search-input').value;
     if (query.trim() === "") {
         alert("검색어를 입력해주세요.");

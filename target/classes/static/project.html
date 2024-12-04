@@ -11,27 +11,21 @@
     <div class="container">
         <!-- 프로젝트 정보 섹션 -->
         <div class="project-info">
-            <h1 class="project-title">프로젝트 이름</h1>
-            <p class="project-description">프로젝트 설명: 예시 웹페이지</p>
-            <div class="project-details">
-                <h2>프로젝트 상세 정보</h2>
-                <p>상세 정보 내용: </p>
-            </div>
-            <div class="creator-info">
-                <h2>창작자 정보</h2>
-                <p>창작자: 홍길동</p>
-                <p>이메일: hong@example.com</p>
-            </div>
+            <h1 id="project-title">프로젝트 이름</h1>
+            <p id="project-description">프로젝트 설명</p>
+            <p><strong>시작일:</strong> <span id="project-start-date"></span></p>
+            <p><strong>종료일:</strong> <span id="project-end-date"></span></p>
+            <p><strong>목표 금액:</strong> <span id="project-target-amount"></span></p>
+            <p><strong>카테고리:</strong> <span id="project-category"></span></p>
+<!--            <p><strong>상태:</strong> <span id="project-state"></span></p>-->
         </div>
 
         <!-- 결제 및 상품 선택 창 -->
         <div class="cart">
             <h2>상품 선택</h2>
-            <label for="product">상품 종류:</label>
-            <select id="product">
-                <option value="product1">상품 1</option>
-                <option value="product2">상품 2</option>
-                <option value="product3">상품 3</option>
+            <label for="project">상품 종류:</label>
+            <select id="project">
+                <!-- 프로젝트 이름이 JavaScript로 추가됩니다 -->
             </select>
             <br>
             <label for="quantity">개수:</label>
@@ -42,6 +36,6 @@
         </div>
     </div>
 
-    <script src="../../../../../../DataBaseClass-front/DataBaseClass-front/Self/js/project.js"></script>
+    <script src="/js/project.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import com.project.funding.model.audit.DateAudit;
 
 @Entity
-@Table(name="products")
+@Table(name="projects")
 public class Projects extends DateAudit{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,11 +19,11 @@ public class Projects extends DateAudit{
 
 	@NotBlank
 	@Size(max = 40)
-	private String productName;
+	private String projectName;
 
 	@NotBlank
 	@Size(max = 40)
-	private int productPrice;
+	private int projectPrice;
 
 	@NotBlank
 	@Size(max = 40)
@@ -35,9 +35,9 @@ public class Projects extends DateAudit{
 
 	@NotBlank
 	@Size(max = 40)
-	private String productExplain;
+	private String projectExplain;
 
-//	@OneToMany(mappedBy = "product")
+//	@OneToMany(mappedBy = "project")
 //	private List<Review> reviews;
 
 	private String name;
@@ -53,20 +53,20 @@ public class Projects extends DateAudit{
 		this.id = id;
 	}
 
-	public String getProductName() {
-		return productName;
+	public String getProjectName() {
+		return projectName;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
 	}
 
-	public int getProductPrice() {
-		return productPrice;
+	public int getProjectPrice() {
+		return projectPrice;
 	}
 
-	public void setProductPrice(int productPrice) {
-		this.productPrice = productPrice;
+	public void setProjectPrice(int projectPrice) {
+		this.projectPrice = projectPrice;
 	}
 
 	public String getCategory() {
@@ -78,12 +78,12 @@ public class Projects extends DateAudit{
 	}
 
 
-	public String getProductExplain() {
-		return productExplain;
+	public String getProjectExplain() {
+		return projectExplain;
 	}
 
-	public void setProductExplain(String productExplain) {
-		this.productExplain = productExplain;
+	public void setProjectExplain(String projectExplain) {
+		this.projectExplain = projectExplain;
 	}
 
 	public int getStock() {

@@ -2,37 +2,37 @@ package com.project.funding.payload;
 
 public class ProjectResponse {
 
-	private Long productId;
+	private Long projectId;
 
-	private String productName;
+	private String projectName;
 
-	private int productPrice;
+	private int projectPrice;
 
 	private int stack;
 
-	private String productExplain;
+	private String projectExplain;
 
 	private String category;
 
 //	private List<ReviewResponse> reviews;
 
-	public Long getProductId() {
-		return productId;
+	public Long getProjectId() {
+		return projectId;
 	}
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
 	}
-	public String getProductName() {
-		return productName;
+	public String getProjectName() {
+		return projectName;
 	}
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
 	}
-	public int getProductPrice() {
-		return productPrice;
+	public int getProjectPrice() {
+		return projectPrice;
 	}
-	public void setProductPrice(int productPrice) {
-		this.productPrice = productPrice;
+	public void setProjectPrice(int projectPrice) {
+		this.projectPrice = projectPrice;
 	}
 	public int getStack() {
 		return stack;
@@ -41,11 +41,11 @@ public class ProjectResponse {
 		this.stack = stack;
 	}
 
-	public String getProductExplain() {
-		return productExplain;
+	public String getProjectExplain() {
+		return projectExplain;
 	}
-	public void setProductExplain(String productExplain) {
-		this.productExplain = productExplain;
+	public void setProjectExplain(String projectExplain) {
+		this.projectExplain = projectExplain;
 	}
 	public String getCategory() {
 		return category;

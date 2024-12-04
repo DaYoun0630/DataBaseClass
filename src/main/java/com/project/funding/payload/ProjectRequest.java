@@ -1,30 +1,30 @@
 package com.project.funding.payload;
 
 public class ProjectRequest {
-	private String productName;
+	private String projectName;
 
-	private int productPrice;
+	private int projectPrice;
 
 	private int stock;
 
 	private String category;
 
-	private String productExplain;
+	private String projectExplain;
 
-	public String getProductName() {
-		return productName;
+	public String getProjectName() {
+		return projectName;
 	}
 
-	public void setProductName(String productName) {
-		this.productName = productName;
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
 	}
 
-	public int getProductPrice() {
-		return productPrice;
+	public int getProjectPrice() {
+		return projectPrice;
 	}
 
-	public void setProductPrice(int productPrice) {
-		this.productPrice = productPrice;
+	public void setProjectPrice(int projectPrice) {
+		this.projectPrice = projectPrice;
 	}
 
 	public int getStock() {
@@ -43,12 +43,12 @@ public class ProjectRequest {
 		this.category = category;
 	}
 
-	public String getProductExplain() {
-		return productExplain;
+	public String getProjectExplain() {
+		return projectExplain;
 	}
 
-	public void setProductExplain(String productExplain) {
-		this.productExplain = productExplain;
+	public void setProjectExplain(String projectExplain) {
+		this.projectExplain = projectExplain;
 	}
 
 

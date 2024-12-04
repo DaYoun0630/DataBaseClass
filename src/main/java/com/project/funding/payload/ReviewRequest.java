@@ -2,18 +2,18 @@ package com.project.funding.payload;
 
 public class ReviewRequest {
 
-	private Long productId;
+	private Long projectId;
 
 	private String reviewContent;
 
 	private int reviewScore;
 
-	public Long getProductId() {
-		return productId;
+	public Long getProjectId() {
+		return projectId;
 	}
 
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setProjectId(Long projectId) {
+		this.projectId = projectId;
 	}
 
 	public String getReviewContent() {

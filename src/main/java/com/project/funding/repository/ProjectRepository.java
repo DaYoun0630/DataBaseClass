@@ -9,7 +9,7 @@ import java.util.Optional;
 @Repository
 public interface ProjectRepository extends JpaRepository<Projects, Long> {
 
-	Optional<Projects> findById(Long productId);
+	Optional<Projects> findById(Long projectId);
 
 	boolean existsByName(String name); // 상품 이름 중복 확인
 

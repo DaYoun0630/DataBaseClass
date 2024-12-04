@@ -18,8 +18,8 @@ public interface OrderRepository extends JpaRepository<Order, Long>{
 
 	List<Order> findByIdIn(List<Long> orderIds);
 
-	@Query("SELECT DISTINCT o.product.id FROM Order o WHERE o.user.id = :userId")
-	List<Long> findOrderedProductIdByUserId(@Param("userId") Long userId);
+	@Query("SELECT DISTINCT o.project.id FROM Order o WHERE o.user.id = :userId")
+	List<Long> findOrderedProjectIdByUserId(@Param("userId") Long userId);
 
 	@Query("SELECT o FROM Order o WHERE o.user.id = :userId")
 	Page<Order> findOrderByUserId(@Param("userId") Long userId, Pageable pageable);
