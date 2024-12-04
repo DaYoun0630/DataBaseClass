@@ -1,21 +1,12 @@
-//document.getElementById('create-project-btn').addEventListener('click', function() {
-//    window.location.href = 'projectCreate.html'; // 프로젝트 만들기 버튼 클릭 시 프로젝트 신청 페이지로 이동
-//});
-//
 //document.addEventListener('DOMContentLoaded', function() {
-//    const navbar = document.getElementById('navbar');
-//    const mainContent = document.getElementById('main-content');
-//
-//    if (navbar && mainContent) {
-//        navbar.style.display = 'block';
-//        mainContent.style.display = 'block';
-//    } else {
-//        console.error('Navbar or main content not found.');
-//    }
-//
 //    // 서버에서 프로젝트 데이터 가져오기
-//    fetch('http://localhost:8080/api/auth/project')
-//        .then(response => response.json())
+//    fetch('http://localhost:8080/api/auth/project') // REST API 경로
+//        .then(response => {
+//            if (!response.ok) {
+//                throw new Error('Network response was not ok');
+//            }
+//            return response.json();
+//        })
 //        .then(data => {
 //            const tableBody = document.querySelector('#project-data-table tbody');
 //            tableBody.innerHTML = ''; // 기존 내용을 초기화
@@ -23,14 +14,14 @@
 //            data.forEach(project => {
 //                const row = `
 //                    <tr>
-//                        <td>${project.project_application_id}</td>
-//                        <td>${project.project_name}</td>
-//                        <td>${project.project_description}</td>
-//                        <td>${project.project_start_date}</td>
-//                        <td>${project.project_end_date}</td>
-//                        <td>${project.project_target_amount.toLocaleString()}</td>
-//                        <td>${project.category_id}</td>
-//                        <td>${project.project_application_review}</td>
+//                        <td>${project.projectApplicationId}</td>
+//                        <td>${project.projectName}</td>
+//                        <td>${project.projectDescription}</td>
+//                        <td>${project.projectStartDate}</td>
+//                        <td>${project.projectEndDate}</td>
+//                        <td>${project.projectTargetAmount.toLocaleString()}</td>
+//                        <td>${project.categoryId}</td>
+//                        <td>${project.state}</td>
 //                    </tr>
 //                `;
 //                tableBody.insertAdjacentHTML('beforeend', row);
@@ -39,7 +30,6 @@
 //        .catch(error => console.error('Error fetching project data:', error));
 //});
 //
-
 document.addEventListener('DOMContentLoaded', function() {
     // 서버에서 프로젝트 데이터 가져오기
     fetch('http://localhost:8080/api/auth/project') // REST API 경로
@@ -55,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             data.forEach(project => {
                 const row = `
-                    <tr>
+                    <tr data-id="${project.projectApplicationId}">
                         <td>${project.projectApplicationId}</td>
                         <td>${project.projectName}</td>
                         <td>${project.projectDescription}</td>
@@ -70,5 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         })
         .catch(error => console.error('Error fetching project data:', error));
-});
 
+    // 동적으로 추가된 <tr> 요소에도 이벤트를 위임
+    const table = document.querySelector('#project-data-table tbody');
+    table.addEventListener('click', function(event) {
+        const row = event.target.closest('tr'); // 클릭된 요소의 상위 <tr> 찾기
+        if (row) {
+            const projectId = row.getAttribute('data-id'); // data-id 속성에서 프로젝트 ID 가져오기
+            if (projectId) {
+                // 상세 페이지로 이동 (query parameter로 projectId 전달)
+                window.location.href = `project.html?projectId=${projectId}`;
+            }
+        }
+    });
+});

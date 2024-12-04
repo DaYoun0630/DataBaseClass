@@ -1,6 +1,6 @@
 package com.project.funding.payload;
 
-public class ProductRequest {
+public class ProjectRequest {
 	private String productName;
 
 	private int productPrice;

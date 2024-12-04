@@ -13,31 +13,31 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.project.funding.exception.BadRequestException;
-import com.project.funding.model.Product;
+import com.project.funding.model.Projects;
 import com.project.funding.payload.PagedResponse;
-import com.project.funding.payload.ProductRequest;
-import com.project.funding.payload.ProductResponse;
-import com.project.funding.repository.ProductRepository;
+import com.project.funding.payload.ProjectRequest;
+import com.project.funding.payload.ProjectResponse;
+import com.project.funding.repository.ProjectRepository;
 import com.project.funding.repository.UserRepository;
 import com.project.funding.security.UserPrincipal;
 import com.project.funding.util.AppConstants;
 import com.project.funding.util.ProductModelMapper;
 
 @Service // 이 클래스가 서비스 계층 역할을 수행하며, 비즈니스 로직을 처리함을 선언
-public class ProductService {
+public class ProjectService {
 
 	@Autowired // 필요한 의존성을 자동으로 주입
-	private ProductRepository productRepository; // 상품 데이터를 처리하는 레포지토리
+	private ProjectRepository productRepository; // 상품 데이터를 처리하는 레포지토리
 
 	@Autowired
 	private UserRepository userRepository; // 사용자 데이터를 처리하는 레포지토리
 
-	private static final Logger logger = LoggerFactory.getLogger(ProductService.class);
+	private static final Logger logger = LoggerFactory.getLogger(ProjectService.class);
 	// 로깅을 위한 Logger 객체. 서버 이벤트를 기록할 때 사용
 
 	// 새로운 상품을 등록하는 메서드
-	public Product registerProduct(ProductRequest productRequest) {
-		Product product = new Product(); // 새로운 상품 객체 생성
+	public Projects registerProduct(ProjectRequest productRequest) {
+		Projects product = new Projects(); // 새로운 상품 객체 생성
 
 		// 상품 객체의 속성 설정
 		product.setProductName(productRequest.getProductName()); // 상품 이름 설정
@@ -51,14 +51,14 @@ public class ProductService {
 	}
 
 	// 모든 상품 목록을 페이징 처리하여 조회하는 메서드
-	public PagedResponse<ProductResponse> getAllProducts(UserPrincipal currentUser, int page, int size) {
+	public PagedResponse<ProjectResponse> getAllProducts(UserPrincipal currentUser, int page, int size) {
 		validatePageNumberAndSize(page, size); // 페이지 번호와 크기 검증
 
 		// 페이징 및 정렬 설정 (최신 상품 순으로 정렬)
 		Pageable pageable = PageRequest.of(page, size, Sort.Direction.DESC, "createdAt");
 
 		// 모든 상품 데이터 조회
-		Page<Product> products = productRepository.findAll(pageable);
+		Page<Projects> products = productRepository.findAll(pageable);
 
 		// 조회된 데이터가 없는 경우 빈 응답 반환
 		if(products.getNumberOfElements() == 0) {
@@ -67,7 +67,7 @@ public class ProductService {
 		}
 
 		// 상품 데이터를 ProductResponse 객체로 변환
-		List<ProductResponse> productResponses = products.map(product -> {
+		List<ProjectResponse> productResponses = products.map(product -> {
 			return ProductModelMapper.mapProductToProductResponse(product);
 		}).getContent();
 

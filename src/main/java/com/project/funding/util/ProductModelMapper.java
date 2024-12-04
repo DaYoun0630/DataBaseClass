@@ -1,17 +1,14 @@
 package com.project.funding.util;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
-import com.project.funding.model.Product;
-import com.project.funding.payload.ProductResponse;
+import com.project.funding.model.Projects;
+import com.project.funding.payload.ProjectResponse;
 //import com.project.funding.payload.ReviewResponse;
 
 public class ProductModelMapper {
 
-	public static ProductResponse mapProductToProductResponse(Product product) {
+	public static ProjectResponse mapProductToProductResponse(Projects product) {
 
-		ProductResponse productResponse = new ProductResponse();
+		ProjectResponse productResponse = new ProjectResponse();
 
 //		productResponse.setProductId(product.getId());
 		productResponse.setProductName(product.getProductName());

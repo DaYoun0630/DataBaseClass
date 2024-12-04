@@ -17,15 +17,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.project.funding.model.Product;
+import com.project.funding.model.Projects;
 import com.project.funding.payload.ApiResponse;
 import com.project.funding.payload.PagedResponse;
-import com.project.funding.payload.ProductRequest;
-import com.project.funding.payload.ProductResponse;
-import com.project.funding.repository.ProductRepository;
+import com.project.funding.payload.ProjectRequest;
+import com.project.funding.payload.ProjectResponse;
+import com.project.funding.repository.ProjectRepository;
 import com.project.funding.security.CurrentUser;
 import com.project.funding.security.UserPrincipal;
-import com.project.funding.service.ProductService;
+import com.project.funding.service.ProjectService;
 import com.project.funding.util.AppConstants;
 
 @RestController // REST API 요청을 처리하는 컨트롤러 클래스임을 선언
@@ -33,10 +33,10 @@ import com.project.funding.util.AppConstants;
 public class ProductController {
 
 	@Autowired // 필요한 의존성을 자동으로 주입
-	private ProductRepository productRepository; // 데이터베이스와 상호작용하는 Repository 객체
+	private ProjectRepository productRepository; // 데이터베이스와 상호작용하는 Repository 객체
 
 	@Autowired
-	private ProductService productService; // 비즈니스 로직을 처리하는 Service 객체
+	private ProjectService productService; // 비즈니스 로직을 처리하는 Service 객체
 
 	private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
 	// 로깅을 위한 Logger 객체. 로그를 기록할 때 사용
@@ -44,7 +44,7 @@ public class ProductController {
 	// 모든 상품을 조회하는 API
 	@GetMapping("/explore") // "/explore" 경로로 GET 요청을 처리
 	@PreAuthorize("hasRole('USER')") // "USER" 역할을 가진 사용자만 접근 가능
-	public PagedResponse<ProductResponse> getAllProducts(
+	public PagedResponse<ProjectResponse> getAllProducts(
 			@CurrentUser UserPrincipal currentUser, // 현재 로그인한 사용자 정보
 			@RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER) int page, // 페이지 번호 (기본값: 0)
 			@RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_PAGE_SIZE) int size // 페이지당 항목 수 (기본값: AppConstants에 정의된 값)
@@ -57,10 +57,10 @@ public class ProductController {
 	@PostMapping("/register") // "/register" 경로로 POST 요청을 처리
 	@PreAuthorize("hasRole('ADMIN')") // "ADMIN" 역할을 가진 사용자만 접근 가능
 	public ResponseEntity<?> registerProduct(
-			@Valid @RequestBody ProductRequest productRequest // 상품 등록에 필요한 데이터를 요청 본문에서 받음
+			@Valid @RequestBody ProjectRequest productRequest // 상품 등록에 필요한 데이터를 요청 본문에서 받음
 	) {
 		// ProductService를 호출하여 상품 등록 처리
-		Product product = productService.registerProduct(productRequest);
+		Projects product = productService.registerProduct(productRequest);
 
 		// 생성된 상품의 ID를 포함한 URI 생성
 		URI location = ServletUriComponentsBuilder

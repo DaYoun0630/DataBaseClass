@@ -1,8 +1,6 @@
 package com.project.funding.payload;
 
-import java.util.List;
-
-public class ProductResponse {
+public class ProjectResponse {
 
 	private Long productId;
 

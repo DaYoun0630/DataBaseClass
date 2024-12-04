@@ -37,7 +37,7 @@ public class Review extends DateAudit{
 
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    private Projects product;
 
 	public Long getId() {
 		return id;
@@ -79,11 +79,11 @@ public class Review extends DateAudit{
 		this.user = user;
 	}
 
-	public Product getProduct() {
+	public Projects getProduct() {
 		return product;
 	}
 
-	public void setProduct(Product product) {
+	public void setProduct(Projects product) {
 		this.product = product;
 	}
 

@@ -1,12 +1,9 @@
 package com.project.funding.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -15,7 +12,7 @@ import com.project.funding.model.audit.DateAudit;
 
 @Entity
 @Table(name="products")
-public class Product extends DateAudit{
+public class Projects extends DateAudit{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -45,7 +42,7 @@ public class Product extends DateAudit{
 
 	private String name;
 
-	public Product() {}
+	public Projects() {}
 
 
 //	public Long getId() {
