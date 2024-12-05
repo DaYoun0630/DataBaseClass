@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/project.css">
+
+    <title>프로젝트 페이지</title>
+</head>
+<body>
+    <div class="container">
+        <!-- 프로젝트 정보 섹션 -->
+        <div class="project-info">
+            <h1 id="project-title">프로젝트 이름</h1>
+            <p id="project-description">프로젝트 설명</p>
+            <p><strong>시작일:</strong> <span id="project-start-date"></span></p>
+            <p><strong>종료일:</strong> <span id="project-end-date"></span></p>
+            <p><strong>목표 금액:</strong> <span id="project-target-amount"></span></p>
+            <p><strong>카테고리:</strong> <span id="project-category"></span></p>
+<!--            <p><strong>상태:</strong> <span id="project-state"></span></p>-->
+        </div>
+
+        <!-- 결제 및 상품 선택 창 -->
+        <div class="cart">
+            <h2>상품 선택</h2>
+            <label for="project">상품 종류:</label>
+            <select id="project">
+                <!-- 프로젝트 이름이 JavaScript로 추가됩니다 -->
+            </select>
+            <br>
+            <label for="quantity">개수:</label>
+            <input type="number" id="quantity" value="1" min="1">
+            <br>
+            <button id="checkout-btn">결제</button>
+            <p id="cart-summary"></p>
+        </div>
+    </div>
+
+    <script src="/js/project.js"></script>
+</body>
+</html>

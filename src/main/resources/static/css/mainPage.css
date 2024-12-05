@@ -1,0 +1,114 @@
+/* 기본 스타일 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* 콘텐츠 영역 */
+#main-content {
+    margin-top: 60px; /* 헤더가 고정되어 있어서 페이지 내용이 가려지지 않도록 마진 설정 */
+    padding: 1px;
+}
+
+/* 섹션 스타일 */
+section {
+    margin-bottom: 40px;
+}
+
+/* 카테고리 목록 스타일 */
+.category-list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-list ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.category-list li {
+    margin: 0 15px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.category-list li:hover {
+    color: darkslateblue;
+}
+
+/* 프로젝트 만들기 버튼 스타일 */
+.create-project-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* 버튼과 카테고리 간의 간격 조정 */
+}
+
+#create-project-btn {
+    padding: 12px 30px;
+    background-color: darkslateblue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#create-project-btn:hover {
+    background-color: #4b4b9d; /* hover 색상 설정 */
+}
+
+/* 프로젝트 데이터 리스트 스타일 */
+#project-data-container {
+    margin: 40px auto;
+    padding: 20px;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#project-data-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: darkslateblue;
+}
+
+#project-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#project-data-table thead {
+    background-color: #4b4b9d;
+    color: white;
+}
+
+#project-data-table th, #project-data-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+#project-data-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#project-data-table tbody tr:hover {
+    background-color: #f1f1f1;
+}

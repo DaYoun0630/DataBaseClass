@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림 설정</title>
+    <link rel="stylesheet" href="../css/notification.css">
+</head>
+<body>
+    <!--헤더 삽입-->
+    <div id="headerContainer"></div>
+
+    <div class="notification-container">
+        <h1>알림 설정</h1>
+        <form id="notification-form">
+            <div class="notification-item">
+                <label for="complaints">민원 알림</label>
+                <input type="checkbox" id="complaints" name="complaints" checked>
+            </div>
+            <div class="notification-item">
+                <label for="comments">댓글 알림</label>
+                <input type="checkbox" id="comments" name="comments" checked>
+            </div>
+            <div class="notification-item">
+                <label for="projects">프로젝트 알림</label>
+                <input type="checkbox" id="projects" name="projects" checked>
+            </div>
+            <div class="notification-item">
+                <label for="donations">후원 알림</label>
+                <input type="checkbox" id="donations" name="donations" checked>
+            </div>
+
+            <div class="button-container">
+                <button type="submit" id="save-btn">변경 사항 저장</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 변경 사항 저장 팝업 -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>변경 사항이 저장되었습니다.</p>
+            <button id="close-popup">확인</button>
+        </div>
+    </div>
+
+    <script src="../js/notification.js"></script>
+    <script src="../js/header.js"></script>
+</body>
+</html>
